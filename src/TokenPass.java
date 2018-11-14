@@ -1,25 +1,39 @@
-public class TokenPass {
-   int[]arr={5,6,7,2,1,5,19,5,1,2,3,};
+public class TokenPass
+{
+    private int[] board;
+    private int currentPlayer;
 
-    public void bubbleSort(int[] arr)
+    public TokenPass(int playerCount)
     {
-        boolean done=false;
-        while(!done)
+        board=new int[playerCount];
+        for(int i=0;i<playerCount;i++)
         {
-            done=true;
-            for(int i=0;i<arr.length-1;i++)
-            {
-                int a=arr[i];
-                int b=arr[i+1];
-                if(a>b)
-                {
-                    done=false;
-                    arr[i]=b;
-                    arr[i+1]=a;
-                }
-            }
+            board[i]=1+(int)(10*Math.random());
+            currentPlayer=(int)(playerCount * Math.random());
+        }
+    }
+
+    public void distributeCurrentPlayerTokens()
+    {
+        int nextPlayer=currentPlayer;
+        int numToDistribute=board[currentPlayer];
+        board[currentPlayer]=0;
+
+        while(numToDistribute>0)
+        {
+            nextPlayer=(nextPlayer +1)% board.length;
+            board[nextPlayer]++;
+            numToDistribute--;
+        }
+    }
+    public String printBoard()
+    {
+        for(int i=0;i<currentPlayer;i++)
+        {
+
         }
     }
 }
+
 
 
