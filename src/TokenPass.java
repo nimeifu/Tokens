@@ -13,6 +13,8 @@ public class TokenPass
         }
     }
 
+
+
     public void distributeCurrentPlayerTokens()
     {
         int nextPlayer=currentPlayer;
@@ -26,13 +28,23 @@ public class TokenPass
             numToDistribute--;
         }
     }
-    public String printBoard()
+    public void printBoard()
     {
-        for(int i=0;i<currentPlayer;i++)
+        for(int i=0;i<board.length;i++)
         {
-
+            System.out.print("Player "+i+":"+board[i]);
         }
     }
+    public void nextPlayer()
+    {
+
+    }
+    public int gameOver()
+    {
+        while(board[currentPlayer] !=0)
+        {
+
+            
 }
 
 
