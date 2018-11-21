@@ -36,12 +36,13 @@ public class TokenPass {
     public int gameOver()
     {
 
-      if (board[currentPlayer] >0);
+      for(int i=0;i<board.length-1;i++)
         {
-            board[currentPlayer]--;
+            if(board[i]==0)
+                return i;
         }
 
-        return currentPlayer;
+        return -404;
     }
 }
 
